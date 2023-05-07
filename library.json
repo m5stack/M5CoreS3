@@ -1,0 +1,17 @@
+{
+  "name": "M5CoreS3",
+  "description": "An ESP32 Arduino board",
+  "keywords": "M5CoreS3",
+  "authors": {
+    "name": "M5Stack",
+    "url": "http://www.m5stack.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m5stack/M5CoreS3.git"
+  },
+  "version": "0.0.1",
+  "frameworks": "arduino",
+  "platforms": "espressif32",
+  "headers": "M5CoreS3.h"
+}
