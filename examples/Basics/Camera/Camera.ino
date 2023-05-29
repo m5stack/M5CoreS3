@@ -1,7 +1,7 @@
 #include "esp_camera.h"
 #include <WiFi.h>
 #include <M5Unified.h>
-#include <CoreS3_GC0308.hpp>
+#include "CoreS3_GC0308.hpp"
 
 #define PWDN_GPIO_NUM -1
 #define RESET_GPIO_NUM -1
