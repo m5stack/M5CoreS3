@@ -9,14 +9,14 @@
 #define SIOD_GPIO_NUM -1
 #define SIOC_GPIO_NUM -1
 
-#define Y2_GPIO_NUM 47
-#define Y3_GPIO_NUM 48
-#define Y4_GPIO_NUM 16
-#define Y5_GPIO_NUM 15
-#define Y6_GPIO_NUM 42
-#define Y7_GPIO_NUM 41
-#define Y8_GPIO_NUM 40
-#define Y9_GPIO_NUM 39
+#define Y2_GPIO_NUM 39
+#define Y3_GPIO_NUM 40
+#define Y4_GPIO_NUM 41
+#define Y5_GPIO_NUM 42
+#define Y6_GPIO_NUM 15
+#define Y7_GPIO_NUM 16
+#define Y8_GPIO_NUM 48
+#define Y9_GPIO_NUM 47
 
 #define VSYNC_GPIO_NUM 46
 #define HREF_GPIO_NUM 38
