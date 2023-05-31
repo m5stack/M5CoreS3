@@ -49,10 +49,10 @@ void loop() {
     M5.Lcd.printf("%4.2f\t   %4.2f\t   %4.2f", M5.IMU.accel_data.x,
                   M5.IMU.accel_data.y, M5.IMU.accel_data.z);
 
-    USBSerial.printf("\nGyro_X = %4.2f\t Gyro_Y = %4.2f\t Gyro_Z = %4.2f\n\n",
+    Serial.printf("\nGyro_X = %4.2f\t Gyro_Y = %4.2f\t Gyro_Z = %4.2f\n\n",
                      M5.IMU.gyro_data.x, M5.IMU.gyro_data.y,
                      M5.IMU.gyro_data.z);
-    USBSerial.printf("\nAcc_X = %4.2f\t Acc_Y = %4.2f\t Acc_Z = %4.2f\n",
+    Serial.printf("\nAcc_X = %4.2f\t Acc_Y = %4.2f\t Acc_Z = %4.2f\n",
                      M5.IMU.accel_data.x, M5.IMU.accel_data.y,
                      M5.IMU.accel_data.z);
 
