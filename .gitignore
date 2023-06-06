@@ -1,3 +1,6 @@
+.vscode
+.pio
+
 # Prerequisites
 *.d
 
@@ -6,6 +9,7 @@
 *.lo
 *.o
 *.obj
+*.bin
 
 # Precompiled Headers
 *.gch
