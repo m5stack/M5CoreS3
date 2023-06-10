@@ -1,0 +1,16 @@
+{
+  "name": "BMI270_Sensor",
+  "description": "Library for BMI270 sensor",
+  "keywords": "BMI270 BMM150 IMU",
+  "authors": {
+    "name": "Tinyu",
+    "url": "https://github.com/Tinyu-Zhao/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tinyu-Zhao/BMI270_Sensor.git"
+  },
+  "version": "0.0.1",
+  "frameworks": "arduino",
+  "platforms": "espressif32"
+}
