@@ -2,7 +2,7 @@
 
 English | [中文](README_cn.md)
 
-<img src="https://static-cdn.m5stack.com/resource/docs/products/core/CoreS3/img-96063e2a-637a-4d11-ac47-1ce4f1cdfd3e.webp" alt="M5Atom Lite" width="350" height="350">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/core/CoreS3/img-96063e2a-637a-4d11-ac47-1ce4f1cdfd3e.webp" alt="M5Core S3" width="350" height="350">
 
 * **For the Detailed documentation of CoreS3, please [Click here](https://docs.m5stack.com/en/core/CoreS3)**
 
@@ -41,4 +41,4 @@ English | [中文](README_cn.md)
 <!-- 
 ## More Information
 
-**Arduino IDE Development**: [Click Here](https://docs.m5stack.com/en/quick_start/atoms3/arduino) -->
+**Arduino IDE Development**: [Click Here](https://docs.m5stack.com/en/quick_start/cores3/arduino)-->
