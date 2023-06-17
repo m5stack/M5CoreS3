@@ -36,4 +36,4 @@
 
 <!-- ## 更多信息
 
-**Arduino IDE 环境搭建**: [点击这里](https://docs.m5stack.com/zh_CN/quick_start/atoms3/arduino) -->
+**Arduino IDE 环境搭建**: [点击这里](https://docs.m5stack.com/zh_CN/quick_start/cores3/arduino) -->
