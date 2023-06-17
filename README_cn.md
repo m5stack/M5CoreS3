@@ -1,10 +1,15 @@
-# CoreS3 Library
+# M5CoreS3 Library
 
 中文 | [English](README_cn.md)
 
 <img src="https://static-cdn.m5stack.com/resource/docs/products/core/CoreS3/img-96063e2a-637a-4d11-ac47-1ce4f1cdfd3e.webp" width="350" height="350">
 
 * **如果查看 CoreS3 的详细介绍文档，[点击这里](https://docs.m5stack.com/zh_CN/core/CoreS3)**
+
+## 依赖库:
+  - [BMI270_Sensor](https://github.com/Tinyu-Zhao/BMI270_Sensor)
+  - [M5GFX](https://github.com/m5stack/m5gfx)
+  - [M5Unified](https://github.com/m5stack/M5unified)
 
 ## 描述
 
@@ -34,6 +39,6 @@
 
 - [完整原理图pdf](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/K128%20CoreS3/Sch_M5_CoreS3_v1.0.pdf)
 
-<!-- ## 更多信息
+## 更多信息
 
-**Arduino IDE 环境搭建**: [点击这里](https://docs.m5stack.com/zh_CN/quick_start/atoms3/arduino) -->
+**Arduino IDE 环境搭建**: [点击这里](https://docs.m5stack.com/zh_CN/quick_start/cores3/arduino)

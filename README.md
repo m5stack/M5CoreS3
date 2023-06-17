@@ -1,10 +1,15 @@
-# CoreS3 Library
+# M5CoreS3 Library
 
 English | [中文](README_cn.md)
 
-<img src="https://static-cdn.m5stack.com/resource/docs/products/core/CoreS3/img-96063e2a-637a-4d11-ac47-1ce4f1cdfd3e.webp" alt="M5Atom Lite" width="350" height="350">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/core/CoreS3/img-96063e2a-637a-4d11-ac47-1ce4f1cdfd3e.webp" alt="M5CoreS3" width="350" height="350">
 
 * **For the Detailed documentation of CoreS3, please [Click here](https://docs.m5stack.com/en/core/CoreS3)**
+
+## Depend Libraries:
+  - [BMI270_Sensor](https://github.com/Tinyu-Zhao/BMI270_Sensor)
+  - [M5GFX](https://github.com/m5stack/m5gfx)
+  - [M5Unified](https://github.com/m5stack/M5unified)
 
 ## Description
 
@@ -38,7 +43,7 @@ English | [中文](README_cn.md)
 
 - [Complete schematic pdf](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/K128%20CoreS3/Sch_M5_CoreS3_v1.0.pdf)
 
-<!-- 
+
 ## More Information
 
-**Arduino IDE Development**: [Click Here](https://docs.m5stack.com/en/quick_start/atoms3/arduino) -->
+**Arduino IDE Development**: [Click Here](https://docs.m5stack.com/en/quick_start/cores3/arduino)
