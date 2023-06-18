@@ -29,19 +29,7 @@ void M5CoreS3::begin(bool LCDEnable, bool USBSerialEnable, bool I2CEnable) {
     if (I2CEnable) {
         Wire.begin(2, 1, 100000UL);
     }
-    // Btn.begin();
-
-    // if (LEDEnable) {
-    //     dis.begin();
-    // }
-    // Rtc.begin();
 }
-
-// void M5CoreS3::update() {
-//     Touch.update();
-//     Buttons.update();
-//     yield();
-// }
 
 void M5CoreS3::shutdown() {
     Axp.powerOFF();
@@ -54,22 +42,5 @@ int M5CoreS3::shutdown(int seconds) {
     Axp.powerOFF();
     return 0;
 }
-
-// int M5CoreS3::shutdown(const RTC_TimeTypeDef &RTC_TimeStruct) {
-//     Rtc.clearIRQ();
-//     Rtc.SetAlarmIRQ(RTC_TimeStruct);
-//     delay(10);
-//     Axp.powerOFF();
-//     return 0;
-// }
-
-// int M5CoreS3::shutdown(const RTC_DateTypeDef &RTC_DateStruct,
-//                        const RTC_TimeTypeDef &RTC_TimeStruct) {
-//     Rtc.clearIRQ();
-//     Rtc.SetAlarmIRQ(RTC_DateStruct, RTC_TimeStruct);
-//     delay(10);
-//     Axp.powerOFF();
-//     return 0;
-// }
 
 M5CoreS3 M5;

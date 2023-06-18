@@ -23,20 +23,11 @@ class M5CoreS3 {
     ~M5CoreS3();
     void begin(bool LCDEnable = true, bool SerialEnable = true,
                bool I2CEnable = false);
-    // void update();
     void shutdown();
     int shutdown(int seconds);
-    // int shutdown(const RTC_TimeTypeDef &RTC_TimeStruct);
-    // int shutdown(const RTC_DateTypeDef &RTC_DateStruct,
-    //              const RTC_TimeTypeDef &RTC_TimeStruct);
-
     M5Display Lcd = M5Display();
 
     I2C_IMU IMU;
-
-    // M5Touch Touch;
-
-    // M5Buttons Buttons;  // Buttons (global button and gesture functions)
 
     AXP2101 Axp;
 

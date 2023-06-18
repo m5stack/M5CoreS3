@@ -47,12 +47,7 @@ class I2C_IMU {
     void Update();
     float CalcuDir();
     void MagCalibration();
-    /*     bool ReadCalibration();
-        bool SaveCalibration();
-    void read_bmi_bmm_data(struct bmi2_sens_data *accel_gyro_data,
-                           struct bmm150_mag_data *mag_data,
-                           struct bmm150_raw_mag_data *raw_mag_data);
-    */
+
    private:
     const uint8_t BMI270_ADDR = BMI2_I2C_SEC_ADDR;
     const uint8_t BMM150_ADDR = BMM150_DEFAULT_I2C_ADDRESS;

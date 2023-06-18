@@ -5,7 +5,7 @@
 #include <FS.h>
 #include <SPI.h>
 
-#include "utility/Config.h"  // This is where Core2 defines would be
+#include "utility/Config.h"
 #include "utility/In_eSPI.h"
 // #include "utility/Sprite.h"
 #include "Fonts/HZK16.h"

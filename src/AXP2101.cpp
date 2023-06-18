@@ -265,24 +265,11 @@ static constexpr uint8_t AW9523_REG_LEDMODE0 = 0x12;
 static constexpr uint8_t AW9523_REG_LEDMODE1 = 0x13;
 
 void AXP2101::coreS3_init() {
-    // AXP2101
-    //  write1Byte(0x90, 0b10110100);
-    //  write1Byte(0x99, (0b11110 - 5));
-    //  write1Byte(0x96, (0b11110 - 7));
-    //  write1Byte(0x97, (0b11110 - 2));
     write1Byte(0x69, 0b00110101);  // AXP CHG_LED
     //  write1Byte(0x97, (0b11110 - 2));
     write1Byte(0x90, 0xBF);  // AXP ALDO~4,BLDO0~2,DIDO1 Enable
     write1Byte(0x95, 0x28);  // AXP ALDO4 voltage
 
-    // AW9523
-    //  write1Byte(AW9523_ADDR,AW9523_REG_LEDMODE0, 0xFF);
-    //  write1Byte(AW9523_ADDR,AW9523_REG_LEDMODE1, 0xFF);
-    //  write1Byte(AW9523_ADDR,AW9523_REG_CONFIG0, 0b00011000);
-    //  write1Byte(AW9523_ADDR,AW9523_REG_CONFIG1, 0b00001100);
-    //  write1Byte(AW9523_ADDR,AW9523_REG_GCR, (1 << 4));
-    //  write1Byte(AW9523_ADDR,0x03, 0b10000011);
-    //  write1Byte(AW9523_ADDR,0x02, 0b00000101);
     write1Byte(AW9523_ADDR, 0x02, 0b00000101);  // P0
     write1Byte(AW9523_ADDR, 0x03, 0b00000011);
     write1Byte(AW9523_ADDR, 0x04, 0b00011000);
@@ -290,36 +277,14 @@ void AXP2101::coreS3_init() {
     write1Byte(AW9523_ADDR, 0x11, 0b00010000);
     write1Byte(AW9523_ADDR, 0x12, 0b11111111);
     write1Byte(AW9523_ADDR, 0x13, 0b11111111);
-    // // ALDO2 set to 3.3v
-    // write1Byte(0x93, 28);
-    // // ALDO1 set to 1.8v  (0.5 + 100*13)
-    // write1Byte(0x92, 12);
-
-    // // ALDO3 set to 3.3v
-    // write1Byte(0x94, 28);
-    // // ALDO4 set to 3.3v
-    // write1Byte(0x95, 28);
-    // write1Byte(0x69, 0b00110101);
 }
 
 void AXP2101::coreS3_AW9523_init() {
-    /* Copy from lovyan */
-    // m5gfx::i2c::writeRegister8(i2c_port, AW9523_ADDR, AW9523_REG_CONFIG0,
-    // 0b01111000); m5gfx::i2c::writeRegister8(i2c_port, AW9523_ADDR,
-    // AW9523_REG_CONFIG1, 0b01011000); m5gfx::i2c::writeRegister8(i2c_port,
-    // AW9523_ADDR, AW9523_REG_LEDMODE0, 0b11111110);
-    // m5gfx::i2c::writeRegister8(i2c_port, AW9523_ADDR,
-    // AW9523_REG_LEDMODE1, 0b11111000); m5gfx::i2c::writeRegister8(i2c_port,
-    // AW9523_ADDR, AW9523_REG_GCR,(1 << 4));
-
     write1Byte(0x58, 0x04, 0b01111000);
     write1Byte(0x58, 0x05, 0b01011000);
     write1Byte(0x58, 0x12, 0b11111110);
     write1Byte(0x58, 0x13, 0b11111000);
     write1Byte(0x58, 0x11, (1 << 4));
-
-    // m5gfx::i2c::writeRegister8(i2c_port, AW9523_ADDR, 0x02, 0b00000110);
-    // m5gfx::i2c::writeRegister8(i2c_port, AW9523_ADDR, 0x03, 0b10100000);
 
     /* Pull up p0_1 p0_2 */
     // write1Byte(0x58, 0x02, 0b00000110);
