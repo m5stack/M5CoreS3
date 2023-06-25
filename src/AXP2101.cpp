@@ -268,7 +268,7 @@ void AXP2101::coreS3_init() {
     write1Byte(0x69, 0b00110101);  // AXP CHG_LED
     //  write1Byte(0x97, (0b11110 - 2));
     write1Byte(0x90, 0xBF);  // AXP ALDO~4,BLDO0~2,DIDO1 Enable
-    write1Byte(0x95, 0x28);  // AXP ALDO4 voltage
+    write1Byte(0x95, 0b00011100);  // AXP ALDO4 voltage / SD card / 3.3 V
 
     write1Byte(AW9523_ADDR, 0x02, 0b00000101);  // P0
     write1Byte(AW9523_ADDR, 0x03, 0b00000011);
