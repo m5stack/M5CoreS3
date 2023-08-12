@@ -258,6 +258,14 @@ void write1Byte(uint8_t dev_addr, uint8_t addr, uint8_t data) {
     Wire1.endTransmission();
 }
 
+uint8_t read1Byte(uint8_t dev_addr, uint8_t addr) {
+    Wire1.beginTransmission(dev_addr);
+    Wire1.write(addr);
+    Wire1.endTransmission();
+    Wire1.requestFrom(dev_addr, (size_t)1);
+    return Wire1.read();
+}
+
 static constexpr uint8_t AW9523_REG_CONFIG0  = 0x04;
 static constexpr uint8_t AW9523_REG_CONFIG1  = 0x05;
 static constexpr uint8_t AW9523_REG_GCR      = 0x11;
@@ -293,6 +301,34 @@ void AXP2101::coreS3_AW9523_init() {
 
     /* Pull down p0_1 */
     write1Byte(0x58, 0x02, 0b00000100);
+}
+
+void AXP2101::set_BOOST_EN(bool state) {
+    uint8_t value = read1Byte(AW9523_ADDR, 0x03);
+    if(state == true) value |= 0b10000000;
+    else value &= ~0b10000000;
+    write1Byte(AW9523_ADDR, 0x03, value);
+}
+
+void AXP2101::set_BUS_OUT_EN(bool state) {
+    uint8_t value = read1Byte(AW9523_ADDR, 0x02);
+    if(state == true) value |= 0b00000010;
+    else value &= ~0b00000010;
+    write1Byte(AW9523_ADDR, 0x02, value);
+}
+
+void AXP2101::set_BOOST_BUS_OUT_EN(bool state) {
+    set_BOOST_EN(state);
+    // delay is required to prevent reverse current flow from VBUS to BUS_OUT
+    if(state == false) delay(250);
+    set_BUS_OUT_EN(state);
+}
+
+void AXP2101::set_USB_OTG_EN(bool state) {
+    uint8_t value = read1Byte(AW9523_ADDR, 0x02);
+    if(state == true) value |= 0b00100000;
+    else value &= ~0b00100000;
+    write1Byte(AW9523_ADDR, 0x02, value);
 }
 
 /**
