@@ -267,7 +267,7 @@ static constexpr uint8_t AW9523_REG_LEDMODE1 = 0x13;
 void AXP2101::coreS3_init() {
     write1Byte(0x69, 0b00110101);  // AXP CHG_LED
     //  write1Byte(0x97, (0b11110 - 2));
-    write1Byte(0x90, 0xBF);  // AXP ALDO~4,BLDO0~2,DIDO1 Enable
+    write1Byte(0x90, 0xBF);        // AXP ALDO~4,BLDO0~2,DIDO1 Enable
     write1Byte(0x95, 0b00011100);  // AXP ALDO4 voltage / SD card / 3.3 V
 
     write1Byte(AW9523_ADDR, 0x02, 0b00000101);  // P0
@@ -293,6 +293,40 @@ void AXP2101::coreS3_AW9523_init() {
 
     /* Pull down p0_1 */
     write1Byte(0x58, 0x02, 0b00000100);
+}
+
+void AXP2101::setBoostEn(bool state) {
+    uint8_t value = read8Bit(AW9523_ADDR, 0x03);
+    if (state == true)
+        value |= 0b10000000;
+    else
+        value &= ~0b10000000;
+    write1Byte(AW9523_ADDR, 0x03, value);
+}
+
+void AXP2101::setBusOutEn(bool state) {
+    uint8_t value = read8Bit(AW9523_ADDR, 0x02);
+    if (state == true)
+        value |= 0b00000010;
+    else
+        value &= ~0b00000010;
+    write1Byte(AW9523_ADDR, 0x02, value);
+}
+
+void AXP2101::setBoostBusOutEn(bool state) {
+    setBoostEn(state);
+    // delay is required to prevent reverse current flow from VBUS to BUS_OUT
+    if (state == false) delay(250);
+    setBusOutEn(state);
+}
+
+void AXP2101::setUsbOtgEn(bool state) {
+    uint8_t value = read8Bit(AW9523_ADDR, 0x02);
+    if (state == true)
+        value |= 0b00100000;
+    else
+        value &= ~0b00100000;
+    write1Byte(AW9523_ADDR, 0x02, value);
 }
 
 /**

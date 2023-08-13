@@ -103,6 +103,12 @@ class AXP2101 : public I2C_PORT {
 
     void coreS3_init();  ////
     void coreS3_AW9523_init();
+
+    void setBoostEn(bool state);
+    void setBusOutEn(bool state);
+    void setBoostBusOutEn(bool state);
+    void setUsbOtgEn(bool state);
+
     void coreS3_VBUS_boost(bool state);
 };
 
