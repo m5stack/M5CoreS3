@@ -258,14 +258,6 @@ void write1Byte(uint8_t dev_addr, uint8_t addr, uint8_t data) {
     Wire1.endTransmission();
 }
 
-uint8_t read1Byte(uint8_t dev_addr, uint8_t addr) {
-    Wire1.beginTransmission(dev_addr);
-    Wire1.write(addr);
-    Wire1.endTransmission();
-    Wire1.requestFrom(dev_addr, (size_t)1);
-    return Wire1.read();
-}
-
 static constexpr uint8_t AW9523_REG_CONFIG0  = 0x04;
 static constexpr uint8_t AW9523_REG_CONFIG1  = 0x05;
 static constexpr uint8_t AW9523_REG_GCR      = 0x11;
@@ -275,7 +267,7 @@ static constexpr uint8_t AW9523_REG_LEDMODE1 = 0x13;
 void AXP2101::coreS3_init() {
     write1Byte(0x69, 0b00110101);  // AXP CHG_LED
     //  write1Byte(0x97, (0b11110 - 2));
-    write1Byte(0x90, 0xBF);  // AXP ALDO~4,BLDO0~2,DIDO1 Enable
+    write1Byte(0x90, 0xBF);        // AXP ALDO~4,BLDO0~2,DIDO1 Enable
     write1Byte(0x95, 0b00011100);  // AXP ALDO4 voltage / SD card / 3.3 V
 
     write1Byte(AW9523_ADDR, 0x02, 0b00000101);  // P0
@@ -303,31 +295,37 @@ void AXP2101::coreS3_AW9523_init() {
     write1Byte(0x58, 0x02, 0b00000100);
 }
 
-void AXP2101::set_BOOST_EN(bool state) {
-    uint8_t value = read1Byte(AW9523_ADDR, 0x03);
-    if(state == true) value |= 0b10000000;
-    else value &= ~0b10000000;
+void AXP2101::setBoostEn(bool state) {
+    uint8_t value = read8Bit(AW9523_ADDR, 0x03);
+    if (state == true)
+        value |= 0b10000000;
+    else
+        value &= ~0b10000000;
     write1Byte(AW9523_ADDR, 0x03, value);
 }
 
-void AXP2101::set_BUS_OUT_EN(bool state) {
-    uint8_t value = read1Byte(AW9523_ADDR, 0x02);
-    if(state == true) value |= 0b00000010;
-    else value &= ~0b00000010;
+void AXP2101::setBusOutEn(bool state) {
+    uint8_t value = read8Bit(AW9523_ADDR, 0x02);
+    if (state == true)
+        value |= 0b00000010;
+    else
+        value &= ~0b00000010;
     write1Byte(AW9523_ADDR, 0x02, value);
 }
 
-void AXP2101::set_BOOST_BUS_OUT_EN(bool state) {
-    set_BOOST_EN(state);
+void AXP2101::setBoostBusOutEn(bool state) {
+    setBoostEn(state);
     // delay is required to prevent reverse current flow from VBUS to BUS_OUT
-    if(state == false) delay(250);
-    set_BUS_OUT_EN(state);
+    if (state == false) delay(250);
+    setBusOutEn(state);
 }
 
-void AXP2101::set_USB_OTG_EN(bool state) {
-    uint8_t value = read1Byte(AW9523_ADDR, 0x02);
-    if(state == true) value |= 0b00100000;
-    else value &= ~0b00100000;
+void AXP2101::setUsbOtgEn(bool state) {
+    uint8_t value = read8Bit(AW9523_ADDR, 0x02);
+    if (state == true)
+        value |= 0b00100000;
+    else
+        value &= ~0b00100000;
     write1Byte(AW9523_ADDR, 0x02, value);
 }
 

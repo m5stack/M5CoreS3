@@ -34,6 +34,14 @@ uint8_t I2C_PORT::read8Bit(uint8_t subAddress) {
     return _wire->read();
 }
 
+uint8_t I2C_PORT::read8Bit(uint8_t address, uint8_t subAddress) {
+    _wire->beginTransmission(address);
+    _wire->write(subAddress);
+    _wire->endTransmission();
+    _wire->requestFrom(address, (size_t)1);
+    return _wire->read();
+}
+
 uint16_t I2C_PORT::read12Bit(uint8_t subAddress) {
     uint8_t buff[2];
     readBuff(subAddress, 2, buff);

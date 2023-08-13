@@ -21,6 +21,7 @@ class I2C_PORT {
     void write1Byte(uint8_t address, uint8_t subAddress, uint8_t data);
     void write16Bit(uint8_t subAddress, uint8_t data_1, uint8_t data_2);
     uint8_t read8Bit(uint8_t subAddress);
+    uint8_t read8Bit(uint8_t address, uint8_t subAddress);
     uint16_t read12Bit(uint8_t subAddress);
     uint16_t read13Bit(uint8_t subAddress);
     uint16_t read16Bit(uint8_t subAddress);
