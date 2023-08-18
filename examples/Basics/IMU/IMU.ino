@@ -9,6 +9,8 @@
 * Describe: BMI270 example.  IMU
 * Date: 2023/5/5
 *******************************************************************************
+Depend Libraries:
+  - [BMI270_Sensor](https://github.com/Tinyu-Zhao/BMI270_Sensor)
 */
 #include <M5CoreS3.h>
 
