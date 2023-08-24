@@ -3,8 +3,8 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-// #include "FS.h"
-// #include "SD.h"
+#include "FS.h"
+#include "SD.h"
 
 // #include <FastLED.h>
 #include "M5Display.h"

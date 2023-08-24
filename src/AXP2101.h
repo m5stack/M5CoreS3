@@ -93,15 +93,8 @@ class AXP2101 : public I2C_PORT {
     /* Temperature data */
     float getAXP173Temp();
     float getTSTemp();
-    // -- sleep
-    void PrepareToSleep(void);
-    void RestoreFromLightSleep(void);
-    void DeepSleep(uint64_t time_in_us = 0);
-    void LightSleep(uint64_t time_in_us = 0);
 
-    void setBacklight(bool state);
-
-    void coreS3_init();  ////
+    void coreS3_init();
     void coreS3_AW9523_init();
 
     void setBoostEn(bool state);
@@ -110,6 +103,7 @@ class AXP2101 : public I2C_PORT {
     void setUsbOtgEn(bool state);
 
     void coreS3_VBUS_boost(bool state);
+    bool isSDCardExist();
 };
 
 #endif

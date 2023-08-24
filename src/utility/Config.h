@@ -14,6 +14,9 @@
 
 // SD card
 #define TFCARD_CS_PIN 4
+#define SPI_MOSI_PIN  37
+#define SPI_MISO_PIN  35
+#define SPI_SCK_PIN   36
 
 // UART
 #define USE_SERIAL USBSerial

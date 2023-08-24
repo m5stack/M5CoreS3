@@ -383,3 +383,7 @@ void AXP2101::coreS3_VBUS_boost(bool state) {
         write1Byte(0xF0, 0x00);
     }
 }
+
+bool AXP2101::isSDCardExist() {
+    return (bool)!((read8Bit(AW9523_ADDR, 0x00) >> 4) & 0x01);
+}
