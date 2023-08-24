@@ -295,22 +295,31 @@ void AXP2101::coreS3_AW9523_init() {
     write1Byte(0x58, 0x02, 0b00000100);
 }
 
-void AXP2101::setBoostEn(bool state) {
-    uint8_t value = read8Bit(AW9523_ADDR, 0x03);
-    if (state == true)
-        value |= 0b10000000;
-    else
-        value &= ~0b10000000;
-    write1Byte(AW9523_ADDR, 0x03, value);
-}
-
-void AXP2101::setBusOutEn(bool state) {
+void AXP2101::setBusOutEn(bool state) {  // BUS OUT EN
     uint8_t value = read8Bit(AW9523_ADDR, 0x02);
     if (state == true)
         value |= 0b00000010;
     else
         value &= ~0b00000010;
     write1Byte(AW9523_ADDR, 0x02, value);
+}
+
+void AXP2101::setUsbOtgEn(bool state) {  // USB OTG EN
+    uint8_t value = read8Bit(AW9523_ADDR, 0x02);
+    if (state == true)
+        value |= 0b00100000;
+    else
+        value &= ~0b00100000;
+    write1Byte(AW9523_ADDR, 0x02, value);
+}
+
+void AXP2101::setBoostEn(bool state) {  // Boost
+    uint8_t value = read8Bit(AW9523_ADDR, 0x03);
+    if (state == true)
+        value |= 0b10000000;
+    else
+        value &= ~0b10000000;
+    write1Byte(AW9523_ADDR, 0x03, value);
 }
 
 void AXP2101::setBoostBusOutEn(bool state) {
@@ -320,13 +329,27 @@ void AXP2101::setBoostBusOutEn(bool state) {
     setBusOutEn(state);
 }
 
-void AXP2101::setUsbOtgEn(bool state) {
-    uint8_t value = read8Bit(AW9523_ADDR, 0x02);
-    if (state == true)
-        value |= 0b00100000;
-    else
-        value &= ~0b00100000;
-    write1Byte(AW9523_ADDR, 0x02, value);
+void AXP2101::powerModeSet(power_mode mode) {
+    switch (mode) {
+        case POWER_MODE_USB_IN_BUS_IN:
+            setUsbOtgEn(false);       // USB_OTG_EN=0
+            setBoostBusOutEn(false);  // BUS_OUT_EN,Boost=0
+            break;
+        case POWER_MODE_USB_IN_BUS_OUT:
+            setUsbOtgEn(false);      // USB_OTG_EN=0
+            setBoostBusOutEn(true);  // BUS_OUT_EN,Boost=1
+            break;
+        case POWER_MODE_USB_OUT_BUS_IN:
+            setUsbOtgEn(true);        // USB_OTG_EN=1
+            setBoostBusOutEn(false);  // BUS_OUT_EN,Boost=0
+            break;
+        case POWER_MODE_USB_OUT_BUS_OUT:
+            setUsbOtgEn(true);       // USB_OTG_EN=1
+            setBoostBusOutEn(true);  // BUS_OUT_EN,Boost=1
+            break;
+        default:
+            break;
+    }
 }
 
 /**

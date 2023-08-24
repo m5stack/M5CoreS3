@@ -4,10 +4,15 @@
 #include "utility/I2C_PORT.h"
 
 /* AXP173 device address */
-#define AXP2101_ADDR      0x34
-#define AW9523_ADDR       0x58
-#define AXP173_ADDR_READ  0x69
-#define AXP173_ADDR_WRITE 0x68
+#define AXP2101_ADDR 0x34
+#define AW9523_ADDR  0x58
+
+enum power_mode {
+    POWER_MODE_USB_IN_BUS_IN = 0,
+    POWER_MODE_USB_IN_BUS_OUT,
+    POWER_MODE_USB_OUT_BUS_IN,
+    POWER_MODE_USB_OUT_BUS_OUT,
+};
 
 class AXP2101 : public I2C_PORT {
    private:
@@ -52,6 +57,7 @@ class AXP2101 : public I2C_PORT {
         COULOMETER_PAUSE,
         COULOMETER_ENABLE,
     };
+
     /* Init */
     bool begin(TwoWire* wire = &Wire1);
     /* Power input state */
@@ -97,10 +103,12 @@ class AXP2101 : public I2C_PORT {
     void coreS3_init();
     void coreS3_AW9523_init();
 
-    void setBoostEn(bool state);
+    // Power Manage
     void setBusOutEn(bool state);
-    void setBoostBusOutEn(bool state);
     void setUsbOtgEn(bool state);
+    void setBoostEn(bool state);
+    void setBoostBusOutEn(bool state);
+    void powerModeSet(power_mode mode);
 
     void coreS3_VBUS_boost(bool state);
     bool isSDCardExist();
