@@ -22,8 +22,8 @@ void M5CoreS3::begin(bool LCDEnable, bool USBSerialEnable, bool I2CEnable) {
 
     if (LCDEnable) {
         Axp.coreS3_init();
-        Lcd.clear();
         Lcd.begin();
+        Lcd.clear();
     }
 
     if (I2CEnable) {
