@@ -7,7 +7,7 @@ bool bmm150_init_flag = false;  // FIXME: dirty code
 
 I2C_IMU::I2C_IMU() {
     Wire1.begin(12, 11, 100000UL);
-    USBSerial.begin(115200);
+    //USBSerial.begin(115200); // wut?
 }
 
 I2C_IMU::~I2C_IMU() {
@@ -93,7 +93,7 @@ void I2C_IMU::Init() {
     /* Map data ready interrupt to interrupt pin. */
     ret = bmi2_map_data_int(BMI2_DRDY_INT, BMI2_INT1, &aux_bmi2_dev);
 
-    USBSerial.printf("Valid BMM150 (Aux) sensor - Chip ID : 0x%x\r\n",
+    printf("Valid BMM150 (Aux) sensor - Chip ID : 0x%x\r\n",
                      aux_bmm150_dev.chip_id);
 
     if (aux_bmm150_dev.chip_id == BMM150_CHIP_ID) {
