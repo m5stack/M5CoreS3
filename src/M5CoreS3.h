@@ -1,6 +1,14 @@
 #ifndef _M5CORES3_H_
 #define _M5CORES3_H_
 
+#if ARDUINO_USB_CDC_ON_BOOT
+  #define USBSerial Serial
+#else
+  #include "HWCDC.h"
+  // the warning produced by using the 'inline' keyword is a necessary evil as (HWCDC)USBSerial is declared extern and can't be casted as static
+  inline HWCDC USBSerial;
+#endif
+
 #include <Arduino.h>
 #include <Wire.h>
 #include "FS.h"
