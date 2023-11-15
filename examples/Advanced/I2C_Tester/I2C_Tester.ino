@@ -18,6 +18,7 @@ void setup() {
     M5.begin(true, true,
              false);  // Init M5CoreS3(Initialization of external I2C is also
                       // included).  初始化M5CoreS3
+    M5.Axp.setBoostBusOutEn(true);  // Enable external I2C (PortA) power supply.
     // Wire.begin(12, 11);  // Detect internal I2C.  检测内部I2C
     Wire.begin(2, 1);  // Detect external I2C.  检测外部I2C
     // Not detectable at the same time.  不可同时检测
