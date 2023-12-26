@@ -24,7 +24,7 @@ void setup() {
     CoreS3.begin(cfg);
     CoreS3.Display.setTextColor(GREEN);
     CoreS3.Display.setTextDatum(middle_center);
-    CoreS3.Display.setTextFont(&fonts::Orbitron_Light_24);
+    CoreS3.Display.setFont(&fonts::Orbitron_Light_24);
     CoreS3.Display.setTextSize(1);
 
     if (!CoreS3.Camera.begin()) {

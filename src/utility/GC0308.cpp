@@ -23,12 +23,13 @@ static camera_config_t camera_config = {
     .ledc_timer   = LEDC_TIMER_0,
     .ledc_channel = LEDC_CHANNEL_0,
 
-    .pixel_format = PIXFORMAT_RGB565,
-    .frame_size   = FRAMESIZE_QVGA,
-    .jpeg_quality = 0,
-    .fb_count     = 2,
-    .fb_location  = CAMERA_FB_IN_PSRAM,
-    .grab_mode    = CAMERA_GRAB_WHEN_EMPTY,
+    .pixel_format  = PIXFORMAT_RGB565,
+    .frame_size    = FRAMESIZE_QVGA,
+    .jpeg_quality  = 0,
+    .fb_count      = 2,
+    .fb_location   = CAMERA_FB_IN_PSRAM,
+    .grab_mode     = CAMERA_GRAB_WHEN_EMPTY,
+    .sccb_i2c_port = M5.In_I2C.getPort(),
 };
 
 bool GC0308::begin() {

@@ -25,7 +25,7 @@ void setup() {
     CoreS3.begin(cfg);
     CoreS3.Display.setTextColor(GREEN);
     CoreS3.Display.setTextDatum(middle_center);
-    CoreS3.Display.setTextFont(&fonts::Orbitron_Light_24);
+    CoreS3.Display.setFont(&fonts::Orbitron_Light_24);
     CoreS3.Display.setTextSize(1);
 
     device_init_base_para.ps_led_pulse_freq   = LTR5XX_LED_PULSE_FREQ_40KHZ;

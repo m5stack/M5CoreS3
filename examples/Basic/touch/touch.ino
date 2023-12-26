@@ -22,7 +22,7 @@ void setup(void) {
 
     CoreS3.Display.setTextColor(GREEN);
     CoreS3.Display.setTextDatum(middle_center);
-    CoreS3.Display.setTextFont(&fonts::Orbitron_Light_24);
+    CoreS3.Display.setFont(&fonts::Orbitron_Light_24);
     CoreS3.Display.setTextSize(1);
 
     CoreS3.Display.drawString("Touch Test", CoreS3.Display.width() / 2,
