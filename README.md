@@ -1,5 +1,10 @@
 # M5CoreS3 Library
 
+[![Arduino Compile](https://github.com/m5stack/M5CoreS3/actions/workflows/arduino-action-cores3-compile.yml/badge.svg)](https://github.com/m5stack/M5CoreS3/actions/workflows/arduino-action-cores3-compile.yml)
+[![Arduino Lint](https://github.com/m5stack/M5CoreS3/actions/workflows/Arduino-Lint-Check.yml/badge.svg)](https://github.com/m5stack/M5CoreS3/actions/workflows/Arduino-Lint-Check.yml)
+[![Clang Format](https://github.com/m5stack/M5CoreS3/actions/workflows/clang-format-check.yml/badge.svg)](https://github.com/m5stack/M5CoreS3/actions/workflows/clang-format-check.yml)
+
+
 English | [中文](README_cn.md)
 
 <img src="https://static-cdn.m5stack.com/resource/docs/products/core/CoreS3/img-96063e2a-637a-4d11-ac47-1ce4f1cdfd3e.webp" alt="M5CoreS3" width="350" height="350">
@@ -7,7 +12,7 @@ English | [中文](README_cn.md)
 * **For the Detailed documentation of CoreS3, please [Click here](https://docs.m5stack.com/en/core/CoreS3)**
 
 ## Depend Libraries:
-  - [BMI270_Sensor](https://github.com/Tinyu-Zhao/BMI270_Sensor)
+
   - [M5GFX](https://github.com/m5stack/m5gfx)
   - [M5Unified](https://github.com/m5stack/M5unified)
 
