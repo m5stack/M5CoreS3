@@ -1,6 +1,6 @@
 # M5CoreS3 Library
 
-[![Arduino Compile](https://github.com/m5stack/M5CoreS3/actions/workflows/arduino-action-cores3-compile.yml/badge.svg)](https://github.com/m5stack/M5CoreS3/actions/workflows/arduino-action-cores3-compile.yml)
+[![Arduino Compile](https://github.com/m5stack/M5CoreS3/actions/workflows/arduino-action-compile.yml/badge.svg)](https://github.com/m5stack/M5CoreS3/actions/workflows/arduino-action-compile.yml)
 [![Arduino Lint](https://github.com/m5stack/M5CoreS3/actions/workflows/Arduino-Lint-Check.yml/badge.svg)](https://github.com/m5stack/M5CoreS3/actions/workflows/Arduino-Lint-Check.yml)
 [![Clang Format](https://github.com/m5stack/M5CoreS3/actions/workflows/clang-format-check.yml/badge.svg)](https://github.com/m5stack/M5CoreS3/actions/workflows/clang-format-check.yml)
 
