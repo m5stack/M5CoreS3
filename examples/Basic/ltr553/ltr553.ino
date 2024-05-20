@@ -13,7 +13,7 @@
  * M5Unified: https://github.com/m5stack/M5Unified
  * M5CoreS3: https://github.com/m5stack/M5CoreS3
  */
-#include "M5CoreS3.h"
+#include <M5CoreS3.h>
 
 Ltr5xx_Init_Basic_Para device_init_base_para = LTR5XX_BASE_PARA_CONFIG_DEFAULT;
 
