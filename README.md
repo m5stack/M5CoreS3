@@ -37,6 +37,21 @@ English | [中文](README_cn.md)
 
 [Compilation File](https://github.com/m5stack/M5CoreS3/blob/main/platformio.ini)
 
+## Start with Board Support Package
+
+To speed up prototyping on some development boards, you can use [Board Support Packages](https://github.com/espressif/esp-bsp) (BSPs), which makes initialization of a particular board as easy as few function calls.
+
+A BSP typically supports all of the hardware components provided on development board. Apart from the pinout definition and initialization functions, a BSP ships with drivers for the external components such as sensors, displays, audio codecs etc.
+
+The BSPs are distributed via IDF Component Manager, so they can be found in IDF Component Registry.
+
+Here is an example of how to add M5CoreS3 BSP to your project:
+
+`idf.py add-dependency m5stack_core_s3`
+
+More examples of BSP usage can be found in [BSP examples folder](https://github.com/espressif/esp-bsp/tree/master/examples).
+
+
 ## M5CoreS3 M-BUS Schematic diagram
 
 <img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/CoreS3/S3.jpg" width = "35%">

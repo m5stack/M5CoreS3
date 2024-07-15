@@ -33,6 +33,21 @@
 
 [编译文件](https://github.com/m5stack/M5CoreS3/blob/main/platformio.ini)
 
+
+## 上手板级支持包
+
+可以使用 [板级支持包](https://github.com/espressif/esp-bsp) (BSP)，协助在开发板上的原型开发。仅需要调用几个函数，便可以完成对特定开发板的初始化。
+
+一般来说，BSP 支持开发板上所有硬件组件。除了管脚定义和初始化功能外，BSP 还附带如传感器、显示器、音频编解码器等外部元件的驱动程序。
+
+BSP 通过 IDF 组件管理器 发布，可以前往 IDF 组件注册器 进行下载。
+
+以下示例演示了如何将 M5CoreS3 BSP 添加到项目中：
+
+`idf.py add-dependency m5stack_core_s3`
+
+更多有关使用 BSP 的示例，请前往 [BSP 示例文件夹](https://github.com/espressif/esp-bsp/tree/master/examples)。
+
 ## M5CoreS3 M-BUS示意图
 
 <img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/CoreS3/S3.jpg" width = "35%">
