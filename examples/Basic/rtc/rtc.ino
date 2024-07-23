@@ -1,4 +1,10 @@
-/**
+/*
+ * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
  * @file rtc.ino
  * @author SeanKwok (shaoxiang@m5stack.com)
  * @brief M5CoreS3 RTC SNTP Test
@@ -92,8 +98,7 @@ void setup(void) {
 #endif
 
     time_t t = time(nullptr) + 1;  // Advance one second.
-    while (t > time(nullptr))
-        ;  /// Synchronization in seconds
+    while (t > time(nullptr));     /// Synchronization in seconds
     CoreS3.Rtc.setDateTime(gmtime(&t));
     CoreS3.Display.clear();
 }

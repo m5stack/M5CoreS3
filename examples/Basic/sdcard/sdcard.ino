@@ -1,4 +1,10 @@
-/**
+/*
+ * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
  * @file sdcard.ino
  * @author SeanKwok (shaoxiang@m5stack.com)
  * @brief M5CoreS3 MicroSD Card Test
@@ -55,8 +61,7 @@ void setup() {
         // fails orif the SD card does not exist.
         // 如果SD卡初始化失败或者SD卡不存在，则打印消息.
         println_log("Card failed, or not present");
-        while (1)
-            ;
+        while (1);
     }
 
     uint8_t cardType = SD.cardType();

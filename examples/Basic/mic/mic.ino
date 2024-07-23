@@ -1,4 +1,10 @@
-/**
+/*
+ * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
  * @file mic.ino
  * @author SeanKwok (shaoxiang@m5stack.com)
  * @brief M5CoreS3 Microphone Record Test
