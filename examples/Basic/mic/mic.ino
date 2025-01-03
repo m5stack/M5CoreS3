@@ -2,15 +2,6 @@
  * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
  *
  * SPDX-License-Identifier: MIT
- */
-
-/*
- * @file mic.ino
- * @author SeanKwok (shaoxiang@m5stack.com)
- * @brief M5CoreS3 Microphone Record Test
- * @version 0.1
- * @date 2023-12-18
- *
  *
  * @Hardwares: M5CoreS3
  * @Platform Version: Arduino M5Stack Board Manager v2.0.9
@@ -100,8 +91,8 @@ void loop(void) {
             }
         }
     }
-
-    if (CoreS3.BtnPWR.wasClicked()) {
+    int state = M5.BtnPWR.wasClicked();
+    if (state) {
         auto cfg               = CoreS3.Mic.config();
         cfg.noise_filter_level = (cfg.noise_filter_level + 8) & 255;
         CoreS3.Mic.config(cfg);
