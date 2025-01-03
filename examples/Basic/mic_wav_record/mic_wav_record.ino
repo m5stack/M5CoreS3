@@ -13,7 +13,7 @@
 
 #include <M5CoreS3.h>
 #include <SPI.h>
-// #include <SD.h>
+#include <SD.h>
 
 // Btn A is to record audio. Btn A 是录音音频
 // Btn B is to play audio. Btn B是播放音频
