@@ -3,7 +3,7 @@
 static camera_config_t camera_config = {
     .pin_pwdn     = -1,
     .pin_reset    = -1,
-    .pin_xclk     = 2,
+    .pin_xclk     = -1,
     .pin_sscb_sda = 12,
     .pin_sscb_scl = 11,
     .pin_d7       = 47,
