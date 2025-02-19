@@ -29,10 +29,11 @@ static camera_config_t camera_config = {
     .fb_count      = 2,
     .fb_location   = CAMERA_FB_IN_PSRAM,
     .grab_mode     = CAMERA_GRAB_WHEN_EMPTY,
-    .sccb_i2c_port = M5.In_I2C.getPort(),
+    .sccb_i2c_port = -1,
 };
 
-bool GC0308::begin() {
+bool GC0308::begin()
+{
     M5.In_I2C.release();
     esp_err_t err = esp_camera_init(&camera_config);
     if (err != ESP_OK) {
@@ -42,7 +43,8 @@ bool GC0308::begin() {
     return true;
 }
 
-bool GC0308::get() {
+bool GC0308::get()
+{
     fb = esp_camera_fb_get();
     if (!fb) {
         return false;
@@ -50,7 +52,8 @@ bool GC0308::get() {
     return true;
 }
 
-bool GC0308::free() {
+bool GC0308::free()
+{
     if (fb) {
         esp_camera_fb_return(fb);
         return true;
