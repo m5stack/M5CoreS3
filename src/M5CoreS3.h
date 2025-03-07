@@ -8,9 +8,9 @@
 
 namespace m5 {
 class M5CoreS3 {
-   private:
+private:
     /* data */
-   public:
+public:
     void begin();
     void begin(m5::M5Unified::config_t cfg);
 
@@ -26,7 +26,7 @@ class M5CoreS3 {
 
     Mic_Class &Mic = M5.Mic;
 
-    Button_Class &BtnPWR = M5.BtnPWR;
+    Button_Class &BtnPWR = M5.getButton(4);
 
     /// for internal I2C device
     I2C_Class &In_I2C = m5::In_I2C;
