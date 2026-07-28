@@ -32,10 +32,19 @@ static camera_config_t camera_config = {
     .sccb_i2c_port = -1,
 };
 
-bool GC0308::begin()
+GC0308::GC0308() {
+    fb = nullptr;
+    sensor = nullptr;
+    config = &camera_config;
+}
+
+bool GC0308::begin(camera_config_t* _config)
 {
     M5.In_I2C.release();
-    esp_err_t err = esp_camera_init(&camera_config);
+    if (_config) {
+        config = _config;
+    }
+    esp_err_t err = esp_camera_init(config);
     if (err != ESP_OK) {
         return false;
     }

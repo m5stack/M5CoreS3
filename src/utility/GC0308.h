@@ -10,7 +10,9 @@ public:
     camera_fb_t* fb;
     sensor_t* sensor;
     camera_config_t* config;
-    bool begin();
+
+    GC0308();
+    bool begin(camera_config_t* _config = nullptr);
     bool get();
     bool free();
 };
